@@ -1,6 +1,0 @@
-{
-  "comment": "Built-in update links: GitHub Releases of Degederon/TickerSec. 'latest' always points to the newest published release.",
-  "manifestUrl": "https://github.com/Degederon/TickerSec/releases/latest/download/latest.json",
-  "manifestBackups": [],
-  "installerUrl": "https://github.com/Degederon/TickerSec/releases/latest/download/TickerSec-Setup.exe"
-}
