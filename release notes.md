@@ -1,5 +1,8 @@
 # TickerSec release notes
 
+## 2.8.5
+- Update test: same as 2.8.4 — confirms automatic updates from this repository work.
+
 ## 2.8.4
 - **Updates now come straight from this GitHub repository.**
 - **New Settings** — a Status page (feed health, quick actions), a Headlines page, and a live preview on Display and Alerts.

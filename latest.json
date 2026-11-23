@@ -1,9 +1,9 @@
 {
   "name": "TickerSec",
-  "version": "2.8.4",
+  "version": "2.8.5",
   "date": "2026-11-23",
-  "notes": "Updates now come straight from the TickerSec GitHub repository. New Settings with a Status page, Headlines page and live preview; fixes headlines that stop opening.",
-  "size": 81624490,
-  "sha256": "03b6f299a1d8f428aadc0966cd280ad8732c9791ca67481cd668e6b19f3462b1",
+  "notes": "Update test: same as 2.8.4 — confirms updates from GitHub work.",
+  "size": 81624512,
+  "sha256": "7040ca4cf2126d2e78eb8cb13a80fc5da8201af741cdfe9db437cfc98b3868be",
   "installer": "https://github.com/Degederon/TickerSec/raw/main/TickerSec-Setup.exe"
 }
