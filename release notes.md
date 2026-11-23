@@ -1,9 +1,9 @@
-**Download:** `TickerSec-Setup.exe` below — run it, one click, no questions. Existing installs update themselves.
+# TickerSec release notes
 
-### What's new
-- **Updates now come from GitHub** — every install checks this repository's latest release.
-- **New Settings** — a Status page with the health of every feed and quick actions, a Headlines page, and a live preview on Display and Alerts.
+## 2.8.4
+- **Updates now come straight from this GitHub repository.**
+- **New Settings** — a Status page (feed health, quick actions), a Headlines page, and a live preview on Display and Alerts.
 - **Fixed: headlines that stop opening** after TickerSec has run for a while.
 - The tickers stay full after a self-refresh.
 
-> Windows SmartScreen may say "Windows protected your PC" because the installer isn't code-signed — click **More info → Run anyway**.
+> If TickerSec 2.7.6 – 2.8.2 says it can't check for updates, download **TickerSec-Setup.exe** from this repository once — it updates itself from then on.
