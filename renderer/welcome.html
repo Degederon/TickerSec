@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:">
+  <title>Welcome to TickerSec</title>
+  <link rel="stylesheet" href="settings.css">
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="wrap">
+    <div class="steps"><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+
+    <!-- Step 1: greeting -->
+    <section class="step on" id="step1">
+      <div class="hello">
+        <img class="big-icon" src="../icon.svg" alt="">
+        <h1 id="greeting">Welcome to TickerSec</h1>
+        <p class="lead"><b>Breaking News feeds</b>, right on your desktop. TickerSec brings the latest headlines from trusted news and security sources and scrolls them across your screen in sleek, glassy tickers — no browser needed.</p>
+        <div class="features">
+          <div class="feat glass"><span>📰</span><b>Live headlines</b><small>From the sources you choose, refreshed every few minutes</small></div>
+          <div class="feat glass"><span>🔔</span><b>Smart alerts</b><small>Breaking news and your own keywords stand out</small></div>
+          <div class="feat glass"><span>🖱️</span><b>One click to read</b><small>Click any headline to open the full story</small></div>
+          <div class="feat glass"><span>⬆️</span><b>Always up to date</b><small>New versions install themselves when you're ready</small></div>
+        </div>
+      </div>
+      <footer class="foot">
+        <a class="credit-line" href="#" title="EPOMD Training Labs, EZ Tools and More — YouTube">Created by <b>Jay Appell</b> · 11/2026 · <span class="yt">▶ YouTube</span></a>
+        <button class="btn primary big" id="go2">Get started  →</button>
+      </footer>
+    </section>
+
+    <!-- Step 2: pick up to 4 categories -->
+    <section class="step" id="step2">
+      <header class="head2">
+        <div>
+          <h1>What would you like to follow?</h1>
+          <p class="lead">Choose up to <b>4</b> categories. Each one comes with its trusted sources, ready to go — you can fine-tune everything later in Settings.</p>
+        </div>
+        <span id="count" class="pill big">0 of 4 chosen</span>
+      </header>
+      <div id="cats" class="cats"></div>
+      <div class="where glass">
+        <span>Where should the tickers go?</span>
+        <div class="seg" id="position">
+          <button data-v="top">Top of the screen</button>
+          <button data-v="bottom" class="on">Bottom of the screen</button>
+        </div>
+      </div>
+      <footer class="foot">
+        <button class="btn ghost" id="back1">←  Back</button>
+        <button class="btn primary big" id="go3" disabled>Set up my tickers  →</button>
+      </footer>
+    </section>
+
+    <!-- Step 3: setting up, then done -->
+    <section class="step" id="step3">
+      <div class="hello">
+        <div id="spinner" class="spinner"></div>
+        <h1 id="doneTitle">Setting up your tickers…</h1>
+        <ul id="setupList" class="setup-list"></ul>
+        <div id="tips" class="tips glass" style="display:none">
+          <div><b>Right-click</b> any ticker to open Settings — add sources, alerts and more.</div>
+          <div><b>Click</b> a headline to read the full story; hover to pause it.</div>
+          <div>Press <b>Ctrl + Alt + N</b> to hide or show the tickers.</div>
+        </div>
+      </div>
+      <footer class="foot">
+        <a class="credit-line" href="#" title="EPOMD Training Labs, EZ Tools and More — YouTube">Created by <b>Jay Appell</b> · 11/2026 · <span class="yt">▶ YouTube</span></a>
+        <button class="btn primary big" id="finish" style="visibility:hidden">Start TickerSec  →</button>
+      </footer>
+    </section>
+  </div>
+  <script src="welcome.js"></script>
+</body>
+</html>

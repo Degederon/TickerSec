@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:">
+  <title>TickerSec — Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+  <div class="shell">
+    <aside class="side glass">
+      <div class="brand">
+        <img src="../icon.svg" alt="">
+        <div>
+          <div class="brand-name">TickerSec</div>
+          <div class="brand-sub">Desktop tickers</div>
+        </div>
+      </div>
+      <label class="master" id="masterWrap" title="Turn TickerSec on or off (Ctrl + Alt + T)">
+        <input type="checkbox" id="master"><i></i>
+        <span><b id="masterText">TickerSec is ON</b><small id="masterSub">Tickers, headlines and alerts are running</small></span>
+      </label>
+      <nav>
+        <button class="nav active" data-tab="status"><span>🟢</span>Status</button>
+        <button class="nav" data-tab="agencies"><span>📰</span>News agencies</button>
+        <button class="nav" data-tab="headlines"><span>🗞️</span>Headlines</button>
+        <button class="nav" data-tab="display"><span>🖥️</span>Display</button>
+        <button class="nav" data-tab="alerts"><span>🔔</span>Alerts</button>
+        <button class="nav" data-tab="updates"><span>🔄</span>Updates</button>
+        <button class="nav" data-tab="translation"><span>🌐</span>Translation</button>
+      </nav>
+      <div class="side-foot">
+        <div id="saveState" class="save-state">All changes saved</div>
+        <div class="hint">Right-click any ticker to open Settings.<br>Ctrl + Alt + N hides or shows the tickers.</div>
+        <div class="feedback">
+          <button class="btn ghost small" id="feedbackBtn" title="Opens an email to tickersec@epomd.com">✉ Send feedback</button>
+          <div class="fb-note">Email <span class="fb-addr">tickersec@epomd.com</span></div>
+        </div>
+        <a class="credit" id="creditLink" href="#" title="EPOMD Training Labs, EZ Tools and More — YouTube">Created by <b>Jay Appell</b><br>11/2026 · <span class="yt">▶ YouTube</span></a>
+      </div>
+    </aside>
+
+    <main>
+      <!-- ── Agencies ─────────────────────────────────────────── -->
+      <section class="tab active" id="tab-status">
+        <header>
+          <h1>Status</h1>
+          <p>Everything TickerSec is doing right now, at a glance.</p>
+        </header>
+        <div class="glass card status-hero" id="stHero">
+          <div class="st-ring"><i></i></div>
+          <div class="st-text"><h2 id="stTitle">Checking…</h2><p id="stSub" class="muted"></p></div>
+          <div class="st-kpis" id="stKpis"></div>
+        </div>
+        <div class="glass card">
+          <div class="card-head"><h2>Quick actions</h2></div>
+          <div class="row wrap">
+            <button class="btn ghost" id="qaRefresh">⟳ Refresh headlines</button>
+            <button class="btn ghost" id="qaHide">Hide tickers</button>
+            <button class="btn ghost" id="qaRebuild" title="Rebuilds the ticker window — use if headlines won't open">↻ Refresh the tickers</button>
+            <button class="btn ghost" id="qaLog">Open the log</button>
+            <button class="btn ghost" id="qaReport">Write a click report</button>
+          </div>
+          <span id="qaResult" class="test-result"></span>
+        </div>
+        <div class="glass card">
+          <div class="card-head"><h2>Your feeds</h2><span id="stFeedCount" class="pill"></span></div>
+          <div class="feed-filter seg small" id="stFilter">
+            <button data-v="all" class="on">All</button><button data-v="bad">Problems</button><button data-v="ok">Working</button>
+          </div>
+          <ul id="stFeeds" class="feed-health"></ul>
+        </div>
+        <div class="glass card">
+          <div class="card-head"><h2>Version</h2><span id="stVersion" class="pill"></span></div>
+          <div class="row"><span id="stUpd" class="muted"></span><button class="btn ghost small" id="stUpdGo">Go to Updates</button></div>
+        </div>
+      </section>
+
+      <section class="tab" id="tab-agencies">
+        <header>
+          <h1>News agencies</h1>
+          <p>Each agency you add gets its own scrolling bar. Your tickers are grouped — click a group to see its sources; use ▲▼ to change the order (the top group is the top bar).</p>
+        </header>
+
+        <div class="glass card">
+          <div class="card-head">
+            <h2>Your tickers</h2>
+            <span id="enabledCount" class="pill"></span>
+          </div>
+          <ul id="enabledList" class="enabled-list"></ul>
+          <div id="enabledEmpty" class="empty">No agencies yet — add some from the list below.</div>
+        </div>
+
+        <div class="glass card">
+          <div class="card-head">
+            <h2>Add agencies</h2>
+            <div class="row">
+              <button id="testAll" class="btn ghost small">Test all agencies</button>
+              <input id="search" class="search" type="search" placeholder="Search agencies or categories…">
+            </div>
+          </div>
+          <div id="testAllResult" class="test-result" style="margin:-6px 0 12px"></div>
+          <div id="catalog"></div>
+        </div>
+
+        <div class="glass card">
+          <div class="card-head"><h2>Add a custom feed</h2></div>
+          <p class="muted">Paste any RSS or Atom feed address — most news sites have one (look for “RSS” at the bottom of their page).</p>
+          <div class="custom-form">
+            <label>Name<input id="cName" placeholder="My local paper"></label>
+            <label class="grow">Feed address<input id="cUrl" placeholder="https://example.com/rss.xml"></label>
+            <label>Language<select id="cLang" class="lang-select"></select></label>
+            <label>Color<input id="cColor" type="color" value="#4fa3ff"></label>
+          </div>
+          <div class="row">
+            <button id="cTest" class="btn ghost">Test feed</button>
+            <button id="cAdd" class="btn primary">Add feed</button>
+            <span id="cResult" class="test-result"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Display ──────────────────────────────────────────── -->
+      <section class="tab" id="tab-display">
+        <header>
+          <h1>Display</h1>
+          <p>Changes show on the tickers right away — and in the preview below.</p>
+        </header>
+        <div class="glass card preview-card"><div class="card-head"><h2>Preview</h2><span class="pill">sample headlines</span></div><iframe class="preview" src="preview.html" title="Ticker preview"></iframe></div>
+        <div class="glass card grid2">
+          <div class="field">
+            <div class="flabel">Position</div>
+            <div class="seg" id="position">
+              <button data-v="top">Top of screen</button>
+              <button data-v="bottom">Bottom of screen</button>
+              <button data-v="window">In a window</button>
+            </div>
+            <div class="muted small" style="margin-top:6px">“In a window” gives the tickers a normal window you can move, resize and minimize.</div>
+          </div>
+          <div class="field">
+            <div class="flabel">Monitor</div>
+            <select id="monitor"></select>
+          </div>
+          <div class="field range"><div class="flabel">Tickers may use up to <b id="maxHeightPctV"></b></div><input id="maxHeightPct" type="range" min="10" max="100" step="5"><div class="muted small">of the screen height (top/bottom). More tickers than fit get a scrollbar.</div></div>
+          <div class="field range"><div class="flabel">Bar height <b id="barHeightV"></b></div><input id="barHeight" type="range" min="24" max="80" step="1"></div>
+          <div class="field range"><div class="flabel">Text size <b id="fontSizeV"></b></div><input id="fontSize" type="range" min="11" max="40" step="1"></div>
+          <div class="field range"><div class="flabel">Scroll speed <b id="speedV"></b></div><input id="speed" type="range" min="20" max="300" step="5"></div>
+          <div class="field range"><div class="flabel">Background opacity <b id="opacityV"></b></div><input id="opacity" type="range" min="0.2" max="1" step="0.02"></div>
+          <div class="field range"><div class="flabel">Space between bars <b id="gapV"></b></div><input id="gap" type="range" min="0" max="12" step="1"></div>
+          <div class="field range"><div class="flabel">“NEW” tag for headlines younger than <b id="newMinutesV"></b></div><input id="newMinutes" type="range" min="0" max="180" step="5"></div>
+        </div>
+        <div class="glass card toggles">
+          <label class="tgl"><input type="checkbox" id="onlyNew"><i></i><span><b>Show only NEW headlines</b> — just the ones younger than the “NEW” time above (also in the tray menu)</span></label>
+          <label class="tgl"><input type="checkbox" id="showLabel"><i></i><span><b>Show agency name</b> on the left of each bar</span></label>
+          <label class="tgl"><input type="checkbox" id="showTime"><i></i><span><b>Show age</b> of each headline (e.g. 12m)</span></label>
+          <label class="tgl"><input type="checkbox" id="pauseOnHover"><i></i><span><b>Pause on hover</b> so a headline can be read and clicked</span></label>
+          <label class="tgl"><input type="checkbox" id="alwaysOnTop"><i></i><span><b>Keep tickers on top of other windows</b> — turn off to let files and programs you open appear in front of the tickers</span></label>
+          <label class="tgl"><input type="checkbox" id="clickThrough"><i></i><span><b>Click-through</b> — the bars ignore the mouse, so you can click what's underneath</span></label>
+          <label class="tgl"><input type="checkbox" id="startWithWindows"><i></i><span><b>Start with Windows</b></span></label>
+        </div>
+      </section>
+
+      <!-- ── Alerts ───────────────────────────────────────────── -->
+      <section class="tab" id="tab-alerts">
+        <header>
+          <h1>Alerts</h1>
+          <p>Make the headlines that matter to you stand out — and let you know even when the tickers are hidden.</p>
+        </header>
+        <div class="glass card preview-card"><div class="card-head"><h2>Preview</h2><span class="pill">breaking (red) and keyword (gold) glow</span></div><iframe class="preview" src="preview.html" title="Alert preview"></iframe></div>
+
+        <div class="glass card">
+          <div class="card-head"><h2>Preview</h2><span class="pill">See what each part looks like</span></div>
+          <div class="demo-grid">
+            <div>
+              <div class="flabel">On the ticker <span class="small">(sample slides into your top bar for a minute)</span></div>
+              <div class="row">
+                <button class="btn ghost demo" data-k="new">NEW headline</button>
+                <button class="btn ghost demo" data-k="keyword">Keyword headline</button>
+                <button class="btn ghost demo" data-k="breaking">Breaking headline</button>
+                <button class="btn ghost demo" data-k="glow">Glow</button>
+              </div>
+            </div>
+            <div>
+              <div class="flabel">Pop-ups &amp; sound</div>
+              <div class="row">
+                <button class="btn ghost demo" data-k="popup-keyword">Keyword pop-up</button>
+                <button class="btn ghost demo" data-k="popup-breaking">Breaking pop-up</button>
+                <button class="btn ghost demo" data-k="windows">Windows notification</button>
+                <button class="btn ghost demo" data-k="chime">Chime</button>
+                <button class="btn ghost demo" data-k="chime-breaking">Breaking chime</button>
+              </div>
+            </div>
+            <div>
+              <div class="flabel">All together</div>
+              <div class="row">
+                <button class="btn primary demo" data-k="everything">Simulate a breaking alert</button>
+              </div>
+            </div>
+          </div>
+          <div id="demoResult" class="test-result" style="margin-top:10px"></div>
+        </div>
+
+        <div class="glass card">
+          <div class="card-head"><h2>Keyword alerts</h2></div>
+          <p class="muted">One word or phrase per line. Matches whole words, any capitalization. End a word with <b>*</b> to catch variations — <b>hurrican*</b> matches hurricane and hurricanes.</p>
+          <textarea id="keywords" rows="5" placeholder="Steelers&#10;Oak Creek&#10;hurrican*&#10;recall&#10;ransomware"></textarea>
+          <div class="toggles" style="margin-top:14px">
+            <label class="tgl"><input type="checkbox" id="highlight"><i></i><span><b>Highlight</b> matching headlines and mark the keyword in gold</span></label>
+            <label class="tgl"><input type="checkbox" id="notifyKeywords"><i></i><span><b>Pop-up alert</b> when a new keyword headline arrives — works even when the tickers are hidden</span></label>
+          </div>
+        </div>
+
+        <div class="glass card">
+          <div class="card-head"><h2>Breaking news</h2></div>
+          <div class="toggles">
+            <label class="tgl"><input type="checkbox" id="breaking"><i></i><span><b>Detect breaking headlines</b> — shown in red with a BREAKING tag</span></label>
+            <label class="tgl"><input type="checkbox" id="breakingFront"><i></i><span><b>Move them to the front</b> of their agency's bar</span></label>
+            <label class="tgl"><input type="checkbox" id="notifyBreaking"><i></i><span><b>Pop-up alert</b> for breaking headlines</span></label>
+          </div>
+          <p class="muted" style="margin-top:14px">A headline is breaking when it starts with one of these (one per line):</p>
+          <textarea id="breakingWords" rows="6"></textarea>
+        </div>
+
+        <div class="glass card">
+          <div class="card-head"><h2>How alerts pop up</h2></div>
+          <div class="seg" id="notifyStyle" style="max-width:640px">
+            <button data-v="popup">TickerSec pop-up</button>
+            <button data-v="windows">Windows notification</button>
+            <button data-v="both">Both</button>
+          </div>
+          <p class="muted small" style="margin-top:10px">The TickerSec pop-up slides in at the bottom-right corner and always shows. Windows notifications also land in the Windows notification center, but Windows hides them when Do Not Disturb or Focus is on, or if TickerSec is switched off in Windows Settings → System → Notifications.</p>
+          <div class="row"><button id="testNotify" class="btn ghost">Test alert</button><span id="notifyResult" class="test-result"></span></div>
+        </div>
+
+        <div class="glass card">
+          <div class="card-head"><h2>Glow &amp; sound</h2></div>
+          <div class="toggles">
+            <label class="tgl"><input type="checkbox" id="chime"><i></i><span><b>Play a chime</b> when a new keyword or breaking headline arrives (breaking news gets a more urgent version)</span></label>
+          </div>
+          <div class="grid2" style="margin-top:16px">
+            <div class="field range"><div class="flabel">Glow new alerts <b id="glowPassesV"></b></div><input id="glowPasses" type="range" min="0" max="10" step="1"><div class="muted small">How many times a brand-new alert headline pulses as it scrolls by</div></div>
+            <div class="field"></div>
+            <div class="field"><div class="flabel">Chime sound</div><select id="chimeSound">
+              <option value="bell">Soft bell</option>
+              <option value="glass">Glass ping</option>
+              <option value="marimba">Marimba</option>
+              <option value="sonar">Sonar blip</option>
+              <option value="newsflash">News flash</option>
+            </select></div>
+            <div class="field range"><div class="flabel">Chime volume <b id="chimeVolumeV"></b></div><input id="chimeVolume" type="range" min="0.05" max="1" step="0.05"></div>
+          </div>
+          <div class="row" style="margin-top:12px"><button id="testChime" class="btn ghost">Play chime</button><button id="testChimeBreaking" class="btn ghost">Play breaking</button><span id="alertTestResult" class="test-result"></span></div>
+          <div class="toggles" style="margin-top:16px">
+            <label class="tgl"><input type="checkbox" id="quietHours"><i></i><span><b>Quiet hours</b> — no chime between these times (highlights and notifications still work)</span></label>
+          </div>
+          <div class="row" style="margin-top:10px">
+            <label class="flabel">From <input id="quietFrom" type="time" style="width:130px"></label>
+            <label class="flabel">to <input id="quietTo" type="time" style="width:130px"></label>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Headlines ──────────────────────────────────────── -->
+      <section class="tab" id="tab-headlines">
+        <header>
+          <h1>Headlines</h1>
+          <p>How often headlines are fetched and how many are shown.</p>
+        </header>
+        <div class="glass card grid2">
+          <div class="field range"><div class="flabel">Check for news every <b id="refreshMinutesV"></b></div><input id="refreshMinutes" type="range" min="1" max="60" step="1"></div>
+          <div class="field range"><div class="flabel">Headlines per agency <b id="maxPerAgencyV"></b></div><input id="maxPerAgency" type="range" min="3" max="50" step="1"></div>
+          <div class="field range"><div class="flabel">Skip headlines older than <b id="maxAgeHoursV"></b></div><input id="maxAgeHours" type="range" min="0" max="72" step="1"></div>
+          <div class="field"><div class="flabel">&nbsp;</div><button id="refreshNow" class="btn ghost">Refresh now</button></div>
+        </div>
+        <p class="muted small" id="hlNote"></p>
+      </section>
+
+      <!-- ── Updates ──────────────────────────────────────────── -->
+      <section class="tab" id="tab-updates">
+        <header>
+          <h1>Updates</h1>
+          <p>Keep TickerSec up to date.</p>
+        </header>
+
+        <div class="glass card">
+          <div class="card-head"><h2>App updates</h2><span id="updVersion" class="pill"></span></div>
+          <p class="muted">TickerSec checks for a newer version by itself and offers to install it.</p>
+          <div class="toggles" style="margin-top:14px">
+            <label class="tgl"><input type="checkbox" id="autoCheck"><i></i><span><b>Check for updates automatically</b> when the app starts and every few hours</span></label>
+          </div>
+          <div class="row" style="margin-top:14px">
+            <button id="updCheck" class="btn ghost">Check for updates</button>
+            <button id="updInstall" class="btn primary" style="display:none">Install update</button>
+            <span id="updStatus" class="test-result"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Translation ──────────────────────────────────────── -->
+      <section class="tab" id="tab-translation">
+        <header>
+          <h1>Translation</h1>
+          <p>Headlines from agencies in other languages are translated before they scroll. Hover a translated headline to see the original.</p>
+        </header>
+        <div class="glass card toggles">
+          <label class="tgl"><input type="checkbox" id="trEnabled"><i></i><span><b>Translate headlines</b> that aren't already in my language</span></label>
+          <label class="tgl"><input type="checkbox" id="trHover"><i></i><span><b>Show the original</b> when hovering a translated headline</span></label>
+        </div>
+        <div class="glass card grid2">
+          <div class="field"><div class="flabel">Translate into</div><select id="trTarget" class="lang-select no-auto"></select></div>
+          <div class="field">
+            <div class="flabel">Translation service</div>
+            <select id="trProvider">
+              <option value="google">Google Translate — free, no key</option>
+              <option value="mymemory">MyMemory — free, no key (daily limit)</option>
+              <option value="libre">LibreTranslate — your own or hosted server</option>
+              <option value="deepl">DeepL — needs a free or paid API key</option>
+            </select>
+          </div>
+          <div class="field prov prov-mymemory"><div class="flabel">Email (optional — raises the free limit to 50,000 characters a day)</div><input id="mymemoryEmail" placeholder="you@example.com"></div>
+          <div class="field prov prov-libre"><div class="flabel">LibreTranslate server</div><input id="libreUrl" placeholder="https://libretranslate.com"></div>
+          <div class="field prov prov-libre"><div class="flabel">API key (if the server needs one)</div><input id="libreKey" type="password"></div>
+          <div class="field prov prov-deepl"><div class="flabel">DeepL API key</div><input id="deeplKey" type="password" placeholder="xxxxxxxx-xxxx-…:fx"></div>
+        </div>
+        <div class="row">
+          <button id="trTest" class="btn ghost">Test translation</button>
+          <span id="trResult" class="test-result"></span>
+        </div>
+        <p class="muted small">The Google option uses Google's free public web endpoint. It needs no account but isn't an official API and may slow down if used very heavily. Translations are cached, so each headline is only translated once.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>

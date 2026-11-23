@@ -1,9 +1,0 @@
-{
-  "name": "TickerSec",
-  "version": "2.8.2",
-  "date": "2026-11-23",
-  "notes": "New Settings: Status page with feed health and quick actions, Headlines page, live preview. Fixes headlines that stop opening.",
-  "size": 81624628,
-  "sha256": "123086f4c571a7944bf28b1b656b42ebb8ca87fc6662ad8c540d0ecda32d16bb",
-  "installer": "https://epomd-my.sharepoint.com/:u:/p/jappell/IQApRW9gHYcORqcybaiO66iGAacKFP517jETYbdq53HB83g?e=QlvyrD"
-}
