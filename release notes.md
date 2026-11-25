@@ -1,5 +1,10 @@
 # TickerSec release notes
 
+## 2.8.6
+- **New: Local TV** — about 400 local TV news stations across the U.S. in Settings → Local TV. Pick a whole state, a TV market (it covers neighbouring states too) or single stations; they scroll in one Local TV ticker, newest first, or one ticker per state. Optional *Breaking only* filter.
+- The list opens on the states in your time zone, and *Test all stations* checks every feed (results can be saved as a CSV).
+- The station list (local-tv.json in this repository) refreshes itself between versions — new and fixed stations arrive without a new install.
+
 ## 2.8.5
 - Update test: same as 2.8.4 — confirms automatic updates from this repository work.
 

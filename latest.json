@@ -1,9 +1,11 @@
 {
   "name": "TickerSec",
-  "version": "2.8.5",
-  "date": "2026-11-23",
-  "notes": "Update test: same as 2.8.4 — confirms updates from GitHub work.",
-  "size": 81624512,
-  "sha256": "7040ca4cf2126d2e78eb8cb13a80fc5da8201af741cdfe9db437cfc98b3868be",
-  "installer": "https://github.com/Degederon/TickerSec/raw/main/TickerSec-Setup.exe"
+  "version": "2.8.6",
+  "date": "2026-11-25",
+  "notes": "Local TV: about 400 local TV news stations across the U.S. — pick a whole state, a TV market or single stations, in one Local TV ticker or one per state. The station list refreshes itself between versions.",
+  "size": 81644685,
+  "sha256": "05c23ae27b8631b3668867ff549ea8318553e71485f1a8205d821f93f9045afa",
+  "installer": "https://github.com/Degederon/TickerSec/raw/main/TickerSec-Setup.exe",
+  "stationsRev": 1,
+  "stationsSha256": "a6302d0c859c732d501bef2227931f603d9590c53e27c2e36936079a462ec8a6"
 }

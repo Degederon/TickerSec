@@ -18,6 +18,7 @@
 | Area | Items |
 |---|---|
 | 📰 **News agencies** | 180+ built-in sources in 14 groups — world news by region (BBC, NPR, NYT, Fox, Al Jazeera, DW, Le Monde, NHK…) plus Cybersecurity, Government Cyber Alerts (CISA, FBI & IC3, UK NCSC, Canada, Australia), Technology, Science & Space, Health, Business & Markets, Sports, Weather & Disasters and Gaming — and any RSS or Atom feed you add |
+| 📡 **Local TV** | About 400 local TV news stations in 190+ markets across the U.S. — pick a whole state, a TV market or single stations |
 | 📺 **Tickers** | One scrolling bar per agency, stacked at the top or bottom of the screen; topic categories get a title strip and collapse into one combined bar |
 | 🔔 **Alerts** | Keyword alerts, BREAKING detection, a one-time glow for new alert headlines, Windows notifications and an optional chime (5 sounds) with quiet hours |
 | 🌐 **Translation** | Headlines from other languages translated into yours, with the original shown on hover |
@@ -30,6 +31,7 @@
 - **Security operations** — Service Outages (one consolidated ticker from AWS, Azure, Microsoft 365, Google Cloud, Cloudflare, GitHub and more), Vendor Security Advisories, Threat Intelligence and Data Breaches
 - **Cyber Breaking News** — one ticker, consolidated feed, for zero-days, breaches, ransomware and CISA/FBI warnings from Google News, top security outlets and government feeds, newest first
 - **Breaking Across the U.S.** — one ticker, consolidated feed, watching Google News and 36 local TV stations nationwide for explosions, fires, evacuations, hazmat and disasters, newest first, each headline tagged with its station
+- **Local TV** — about 400 local TV news stations across the U.S., grouped by state and TV market. Tick a whole state, a market (a city and the area it covers, even across state lines — New Jersey, for example, gets New York and Philadelphia) or single stations; the list opens on the states in your time zone. They scroll in one Local TV ticker, newest first — or one ticker per state — with an optional *Breaking only* filter. A whole state or market also picks up stations added later, and the station list refreshes itself from this repository between versions
 - **Window mode** — show the tickers in a normal window you can move, resize and minimize; docked tickers scroll when there are more than fit
 - **On/Off switch** — turn TickerSec off (no tickers, headlines or alerts) and back on from Settings, the tray, or Ctrl + Alt + T; remembered after a restart
 - **Status page** — Settings opens on a live overview: feeds working, headline count, last refresh and memory, every feed with a green / amber (backup) / red dot and the reason it failed, plus quick actions (refresh, hide, refresh the tickers, open the log, click report)
@@ -77,7 +79,7 @@ Right-click a ticker, click the tray icon, or start the app again.
 
 ## Privacy
 
-TickerSec talks only to the feed addresses you choose, to GitHub to check for updates and, if translation is turned on, to the translation service you pick (headlines only). Settings stay on your PC in `%APPDATA%\TickerSec\settings.json`. No accounts, no tracking.
+TickerSec talks only to the feed addresses you choose, to GitHub to check for updates (and for a newer Local TV station list) and, if translation is turned on, to the translation service you pick (headlines only). Settings stay on your PC in `%APPDATA%\TickerSec\settings.json`. No accounts, no tracking.
 
 ## Formerly Breaking News
 
