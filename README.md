@@ -18,6 +18,8 @@
 | Area | Items |
 |---|---|
 | 📰 **News agencies** | 180+ built-in sources in 14 groups — world news by region (BBC, NPR, NYT, Fox, Al Jazeera, DW, Le Monde, NHK…) plus Cybersecurity, Government Cyber Alerts (CISA, FBI & IC3, UK NCSC, Canada, Australia), Technology, Science & Space, Health, Business & Markets, Sports, Weather & Disasters and Gaming — and any RSS or Atom feed you add |
+| 👁 **Watchlist** | Name the companies you care about — your bank, employer, vendors — and any ticker flags them the moment they're in a breach, hack or outage |
+| 🏢 **Industry tickers** | Cyber incidents by industry: Finance & Crypto, Tech & SaaS, Healthcare, Retail, Telecom & Media, Travel, Industrial & Energy, Education & Government |
 | 📡 **Local TV** | About 400 local TV news stations in 190+ markets across the U.S. — pick a whole state, a TV market or single stations |
 | 📺 **Tickers** | One scrolling bar per agency, stacked at the top or bottom of the screen; topic categories get a title strip and collapse into one combined bar |
 | 🔔 **Alerts** | Keyword alerts, BREAKING detection, a one-time glow for new alert headlines, Windows notifications and an optional chime (5 sounds) with quiet hours |
@@ -31,6 +33,8 @@
 - **Security operations** — Service Outages (one consolidated ticker from AWS, Azure, Microsoft 365, Google Cloud, Cloudflare, GitHub and more), Vendor Security Advisories, Threat Intelligence and Data Breaches
 - **Cyber Breaking News** — one ticker, consolidated feed, for zero-days, breaches, ransomware and CISA/FBI warnings from Google News, top security outlets and government feeds, newest first
 - **Breaking Across the U.S.** — one ticker, consolidated feed, watching Google News and 36 local TV stations nationwide for explosions, fires, evacuations, hazmat and disasters, newest first, each headline tagged with its station
+- **Watchlist** — add companies and organizations (or one-click starter lists: big U.S. banks, credit bureaus & payments, cloud & SaaS, carriers, airlines, retail, healthcare, crypto exchanges). A headline that mentions one — in any ticker — gets a cyan highlight and a 👁 tag, with an optional alert pop-up. *Only security news* (on by default) keeps it to breaches, hacks, ransomware, leaks and outages
+- **Industry tickers** — eight tickers of cyber incidents by industry, each built from a news search plus the security news sites, newest first. Tick only the industries you follow; the industry list refreshes itself from this repository between versions
 - **Local TV** — about 400 local TV news stations across the U.S., grouped by state and TV market. Tick a whole state, a market (a city and the area it covers, even across state lines — New Jersey, for example, gets New York and Philadelphia) or single stations; the list opens on the states in your time zone. They scroll in one Local TV ticker, newest first — or one ticker per state — with an optional *Breaking only* filter. A whole state or market also picks up stations added later, and the station list refreshes itself from this repository between versions
 - **Window mode** — show the tickers in a normal window you can move, resize and minimize; docked tickers scroll when there are more than fit
 - **On/Off switch** — turn TickerSec off (no tickers, headlines or alerts) and back on from Settings, the tray, or Ctrl + Alt + T; remembered after a restart
@@ -79,7 +83,7 @@ Right-click a ticker, click the tray icon, or start the app again.
 
 ## Privacy
 
-TickerSec talks only to the feed addresses you choose, to GitHub to check for updates (and for a newer Local TV station list) and, if translation is turned on, to the translation service you pick (headlines only). Settings stay on your PC in `%APPDATA%\TickerSec\settings.json`. No accounts, no tracking.
+TickerSec talks only to the feed addresses you choose, to GitHub to check for updates (and for newer Local TV and industry lists) and, if translation is turned on, to the translation service you pick (headlines only). Settings stay on your PC in `%APPDATA%\TickerSec\settings.json`. No accounts, no tracking.
 
 ## Formerly Breaking News
 

@@ -1,5 +1,11 @@
 # TickerSec release notes
 
+## 2.8.7
+- **New: Watchlist** — add the companies you care about (or one-click starter lists: banks, credit bureaus & payments, cloud & SaaS, carriers, airlines, retail, healthcare, crypto exchanges). Any ticker flags a headline that mentions one with a cyan highlight and a 👁 tag, plus an optional alert pop-up. *Only security news* keeps it to breaches, hacks, ransomware, leaks and outages.
+- **New: Industry tickers** — eight tickers of cyber incidents by industry (Finance & Crypto, Tech & SaaS, Healthcare & Pharma, Retail & Hospitality, Telecom & Media, Travel & Logistics, Industrial, Energy & Automotive, Education, Government & Nonprofit).
+- Both are in Settings → Industries & Watchlist, off until you choose. The industry list (industries.json in this repository) refreshes itself between versions.
+- Feeds used by several tickers are now fetched once and shared.
+
 ## 2.8.6
 - **New: Local TV** — about 400 local TV news stations across the U.S. in Settings → Local TV. Pick a whole state, a TV market (it covers neighbouring states too) or single stations; they scroll in one Local TV ticker, newest first, or one ticker per state. Optional *Breaking only* filter.
 - The list opens on the states in your time zone, and *Test all stations* checks every feed (results can be saved as a CSV).
