@@ -17,14 +17,14 @@
 
 | Area | Items |
 |---|---|
-| 📰 **News agencies** | 180+ built-in sources in 14 groups — world news by region (BBC, NPR, NYT, Fox, Al Jazeera, DW, Le Monde, NHK…) plus Cybersecurity, Government Cyber Alerts (CISA, FBI & IC3, UK NCSC, Canada, Australia), Technology, Science & Space, Health, Business & Markets, Sports, Weather & Disasters and Gaming — and any RSS or Atom feed you add |
-| 👁 **Watchlist** | Name the companies you care about — your bank, employer, vendors — and any ticker flags them the moment they're in a breach, hack or outage |
-| 🏢 **Industry tickers** | Cyber incidents by industry: Finance & Crypto, Tech & SaaS, Healthcare, Retail, Telecom & Media, Travel, Industrial & Energy, Education & Government |
-| 📡 **Local TV** | About 400 local TV news stations in 190+ markets across the U.S. — pick a whole state, a TV market or single stations |
-| 📺 **Tickers** | One scrolling bar per agency, stacked at the top or bottom of the screen; topic categories get a title strip and collapse into one combined bar |
-| 🔔 **Alerts** | Keyword alerts, BREAKING detection, a one-time glow for new alert headlines, Windows notifications and an optional chime (5 sounds) with quiet hours |
+| 📰 **News agencies** | 186 built-in sources in 22 groups — world news by region (BBC, NPR, NYT, Fox, Al Jazeera, DW, Le Monde, NHK…), Cybersecurity, Government Cyber Alerts (CISA, FBI & IC3, UK NCSC, Canada, Australia), Threat Intelligence, Data Breaches, Vendor Security Advisories, Service Outages, Power and Internet & Telecom news, Technology, Science & Space, Health, Business & Markets, Sports, Weather & Disasters and Gaming — and any RSS or Atom feed you add |
+| 👁 **Watchlist** | Name the companies you care about — your bank, employer, vendors — or add one-click starter lists, and any ticker flags them the moment they're in a breach, hack or outage |
+| 🏢 **Industry tickers** | Eight tickers of cyber incidents by industry: Finance & Crypto, Tech & SaaS, Healthcare & Pharma, Retail & Hospitality, Telecom & Media, Travel & Logistics, Industrial, Energy & Automotive, Education, Government & Nonprofit |
+| 📡 **Local TV** | About 400 local TV news stations in 190+ markets across the U.S. — pick a whole state, a TV market or single stations, in one ticker or one per state |
+| 📺 **Tickers** | One scrolling bar per agency, stacked at the top or bottom of the screen or in a window; topic categories get a title strip and collapse into one combined bar; consolidated tickers (Cyber Breaking News, Breaking Across the U.S., Local TV, industries…) merge many sources into one bar, newest first |
+| 🔔 **Alerts** | Keyword and watchlist alerts, BREAKING detection, a one-time glow for new alert headlines, alert pop-ups or Windows notifications and an optional chime (5 sounds) with quiet hours |
 | 🌐 **Translation** | Headlines from other languages translated into yours, with the original shown on hover |
-| ⚙️ **Settings page** | A Status page with the health of every feed, quick actions and a live preview; pick agencies, drag to reorder, rename and recolor bars, tune size, speed, opacity and refresh timing |
+| ⚙️ **Settings page** | A Status page with the health of every feed, quick actions and a live preview; News agencies, Local TV and Industries & Watchlist pages; drag to reorder, rename and recolor bars, tune size, speed, opacity and refresh timing |
 
 ## Features
 
