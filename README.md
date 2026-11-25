@@ -9,7 +9,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?logo=windows&logoColor=white" alt="Windows 10 | 11">
   <img src="https://img.shields.io/badge/Electron-33-47848F?logo=electron&logoColor=white" alt="Electron 33">
-  <img src="https://img.shields.io/badge/version-2.8.5-8A2BE2" alt="Version 2.8.5">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FDegederon%2FTickerSec%2Fmain%2Flatest.json&query=%24.version&label=version&color=8A2BE2&cacheSeconds=300" alt="Version">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License MIT">
 </p>
 
