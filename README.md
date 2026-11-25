@@ -34,7 +34,15 @@
 - **Cyber Breaking News** — one ticker, consolidated feed, for zero-days, breaches, ransomware and CISA/FBI warnings from Google News, top security outlets and government feeds, newest first
 - **Breaking Across the U.S.** — one ticker, consolidated feed, watching Google News and 36 local TV stations nationwide for explosions, fires, evacuations, hazmat and disasters, newest first, each headline tagged with its station
 - **Watchlist** — add companies and organizations (or one-click starter lists: big U.S. banks, credit bureaus & payments, cloud & SaaS, carriers, airlines, retail, healthcare, crypto exchanges). A headline that mentions one — in any ticker — gets a cyan highlight and a 👁 tag, with an optional alert pop-up. *Only security news* (on by default) keeps it to breaches, hacks, ransomware, leaks and outages
-- **Industry tickers** — eight tickers of cyber incidents by industry, each built from a news search plus the security news sites, newest first. Tick only the industries you follow; the industry list refreshes itself from this repository between versions
+- **Industry tickers** — eight tickers of cyber incidents (breaches, ransomware, hacks, leaks and outages) by industry, each built from a news search plus ten security news sites, newest first. Tick only the industries you follow; the industry list refreshes itself from this repository between versions:
+  - 🏦 **Finance & Crypto** — Banks, credit unions, payments, credit bureaus, insurers, brokers and crypto exchanges
+  - ☁️ **Tech & SaaS** — Cloud and SaaS providers, software makers and developer platforms
+  - 🏥 **Healthcare & Pharma** — Hospitals, health systems, clinics, insurers, pharmacies and pharma
+  - 🛍️ **Retail & Hospitality** — Retailers, online stores, restaurants, hotels and casinos
+  - 📡 **Telecom & Media** — Mobile carriers, ISPs and broadband, broadcasters, streaming and publishers
+  - ✈️ **Travel & Logistics** — Airlines, airports, travel and booking, rail, shipping, freight and couriers
+  - 🏭 **Industrial, Energy & Automotive** — Manufacturing, factories and OT/ICS, utilities, oil & gas, water, automakers and dealers
+  - 🎓 **Education, Government & Nonprofit** — Schools and universities, cities, counties and agencies, charities and nonprofits
 - **Local TV** — about 400 local TV news stations across the U.S., grouped by state and TV market. Tick a whole state, a market (a city and the area it covers, even across state lines — New Jersey, for example, gets New York and Philadelphia) or single stations; the list opens on the states in your time zone. They scroll in one Local TV ticker, newest first — or one ticker per state — with an optional *Breaking only* filter. A whole state or market also picks up stations added later, and the station list refreshes itself from this repository between versions
 - **Window mode** — show the tickers in a normal window you can move, resize and minimize; docked tickers scroll when there are more than fit
 - **On/Off switch** — turn TickerSec off (no tickers, headlines or alerts) and back on from Settings, the tray, or Ctrl + Alt + T; remembered after a restart
